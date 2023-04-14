@@ -1,4 +1,4 @@
-# moodle_grade
+# moodle_grades
 
 A new Flutter project.
 
