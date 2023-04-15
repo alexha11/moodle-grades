@@ -17,5 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 ## To run this project
 1) Install the files to your own computer by both using git clone or install manually 
-2) If you downloaded VS code or Anroid Studio and SDK for Flutter already, you just need to open the files and run 
-  / copy code in lib directory and past it on website https://dartpad.dev/? 
+2) If you downloaded VS code or Anroid Studio and SDK for Flutter already, you just need to open the files and run. Other way is to copy code in lib directory and past it on website https://dartpad.dev/? 
