@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Grade App',
       theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
+        useMaterial3: true,
+        colorSchemeSeed: Colors.lightGreen,
       ),
       home: const MyHomePage(title: 'Grades'),
     );
