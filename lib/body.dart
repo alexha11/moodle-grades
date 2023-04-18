@@ -1,5 +1,118 @@
 import 'package:flutter/material.dart';
 
+buildingTableCell(String text, int fontSize) {
+  return TableCell(
+    verticalAlignment: TableCellVerticalAlignment.middle,
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 9,
+        ),
+      ),
+    ),
+  );
+}
+
+buildingTable() {
+  return ListView.builder(
+    itemCount: 3,
+    itemBuilder: (BuildContext context, int index) {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              width: 1,
+            ),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+          ),
+          child: Table(
+            border: TableBorder.symmetric(
+              inside: const BorderSide(width: 1),
+            ),
+            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+            children: [
+              const TableRow(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 136, 244, 13),
+                ),
+                children: [
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Assignments',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Grade',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Range',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Deadline',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              ...List.generate(
+                5,
+                (index) => TableRow(
+                  children: [
+                    buildingTableCell('Assignment $index', 9),
+                    buildingTableCell('4.5', 9),
+                    buildingTableCell('0 - 5', 9),
+                    buildingTableCell('Submitted', 9),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+
 class BuildingBody extends StatefulWidget {
   const BuildingBody({super.key});
 
@@ -70,11 +183,14 @@ class _BuildingBodyState extends State<BuildingBody> {
                 hint: Text(selectCourse),
               ),
               const SizedBox(height: 7.0),
-              const Text(
-                '   Choose the course to see the grades',
-                style: TextStyle(
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.bold,
+              const Padding(
+                padding: EdgeInsets.only(right: 8, left: 8, bottom: 6, top: 1),
+                child: Text(
+                  '   Choose the course to see the grades',
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -102,34 +218,22 @@ class _BuildingBodyState extends State<BuildingBody> {
                 minHeight: 7,
               ),
               SizedBox(height: 8),
-              Text(
-                "75% 4",
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey,
+              Padding(
+                padding:
+                    EdgeInsets.only(right: 16, left: 150, bottom: 1, top: 1),
+                child: Text(
+                  "1 |    2 |    3 |   4 |    5 |",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ],
           ),
         ),
         Expanded(
-          child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (BuildContext context, int index) {
-              return DataTable(
-                columns: const [
-                  DataColumn(label: Text('Column 1')),
-                  DataColumn(label: Text('Column 2')),
-                ],
-                rows: [
-                  DataRow(cells: [
-                    DataCell(Text('Row ${index + 1}, Column 1')),
-                    DataCell(Text('Row ${index + 1}, Column 2')),
-                  ]),
-                ],
-              );
-            },
-          ),
+          child: buildingTable(),
         ),
       ],
     );

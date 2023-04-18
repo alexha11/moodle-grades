@@ -1,5 +1,22 @@
 import 'package:flutter/material.dart';
-import '/main.dart';
+
+buildingListTile(String text, IconData icon) {
+  return ListTile(
+    title: Row(
+      children: [
+        Icon(icon),
+        //Spacer(flex: 1),
+        const SizedBox(width: 10.0),
+        Flexible(
+          child: Text(
+            text,
+          ),
+        ),
+      ],
+    ),
+    onTap: () {},
+  );
+}
 
 buildingDrawer(BuildContext context) {
   return Drawer(
@@ -30,69 +47,10 @@ buildingDrawer(BuildContext context) {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                ListTile(
-                  title: Row(
-                    children: const [
-                      Icon(Icons.dashboard_outlined),
-                      //Spacer(flex: 1),
-                      SizedBox(width: 10.0),
-                      Flexible(
-                        child: Text(
-                          'Dashboard',
-                        ),
-                      ),
-                    ],
-                  ),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Row(
-                    children: const [
-                      Icon(Icons.home_outlined),
-                      //Spacer(flex: 1),
-                      SizedBox(width: 10.0),
-                      Flexible(
-                        child: Text(
-                          'Home',
-                        ),
-                      ),
-                    ],
-                  ),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Row(
-                    children: const [
-                      Icon(Icons.calendar_today_outlined),
-                      //Spacer(flex: 1),
-                      SizedBox(width: 10.0),
-                      Flexible(
-                        child: Text(
-                          'Calendar',
-                        ),
-                      ),
-                    ],
-                  ),
-                  onTap: () {},
-                ),
-                ListTile(
-                  title: Container(
-                    color: const Color.fromARGB(255, 216, 244, 185),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.grading_rounded),
-                        //Spacer(flex: 1),
-                        SizedBox(width: 10.0),
-                        Flexible(
-                          child: Text(
-                            'Grades',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  onTap: () {},
-                ),
+                buildingListTile('Dashboard', Icons.dashboard_outlined),
+                buildingListTile('Home', Icons.home_outlined),
+                buildingListTile('Calendar', Icons.calendar_today_outlined),
+                buildingListTile('Grades', Icons.grading_rounded),
               ],
             ),
           ),
@@ -111,108 +69,12 @@ buildingDrawer(BuildContext context) {
                 ),
               ),
             ),
-            ListTile(
-              title: Row(
-                children: const [
-                  Icon(Icons.school),
-                  //Spacer(flex: 1),
-                  SizedBox(width: 10.0),
-                  Flexible(
-                    child: Text(
-                      'BM40A0202 Foundations of Computer Science',
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                // handle menu item 1 tap
-              },
-            ),
-            ListTile(
-              //title: const Text('CT30A2803 User Interface and Usability'),
-              title: Row(
-                children: const [
-                  Icon(Icons.school),
-                  SizedBox(width: 10.0),
-                  Flexible(
-                    child: Text(
-                      'CT30A2803 User Interface and Usability',
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                // handle menu item 2 tap
-              },
-            ),
-            ListTile(
-              //title: const Text('CT60A2411 Object-Oriented Programming'),
-              title: Row(
-                children: const [
-                  Icon(Icons.school),
-                  SizedBox(width: 10.0),
-                  Flexible(
-                    child: Text(
-                      'CT60A2411 Object-Oriented Programming',
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                // handle menu item 3 tap
-              },
-            ),
-            ListTile(
-              //title: const Text('CT60A2500 Principles of C Programming'),
-              title: Row(
-                children: const [
-                  Icon(Icons.school),
-                  SizedBox(width: 10.0),
-                  Flexible(
-                    child: Text(
-                      'CT60A2500 Principles of C Programming',
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                // handle menu item 4 tap
-              },
-            ),
-            ListTile(
-              //title: const Text('CT60A5521 Database Systems Management'),
-              title: Row(
-                children: const [
-                  Icon(Icons.school),
-                  SizedBox(width: 10.0),
-                  Flexible(
-                    child: Text(
-                      'CT60A5521 Database Systems Management',
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                // handle menu item 5 tap
-              },
-            ),
-            ListTile(
-              //title: const Text('CT60A9600 Discrete Models and Methods 2'),
-              title: Row(
-                children: const [
-                  Icon(Icons.school),
-                  SizedBox(width: 10.0),
-                  Flexible(
-                    child: Text(
-                      'CT60A9600 Discrete Models and Methods 2',
-                    ),
-                  ),
-                ],
-              ),
-              onTap: () {
-                // handle menu item 6 tap
-              },
-            ),
+            buildingListTile('BM40A0202 Foundations of Computer Science', Icons.school),
+            buildingListTile('CT30A2803 User Interface and Usability', Icons.school),
+            buildingListTile('CT60A2411 Object-Oriented Programming', Icons.school),
+            buildingListTile('CT60A2500 Principles of C Programming', Icons.school),
+            buildingListTile('CT60A5521 Database Systems Management', Icons.school),
+            buildingListTile('CT60A9600 Discrete Models and Methods 2', Icons.school),
           ],
         ),
       ],

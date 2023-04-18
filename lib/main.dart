@@ -39,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       drawer: Drawer(
+        
         child: buildingDrawer(context),   //function buildingDrawer is in drawer.dart
       ),
       body: const BuildingBody(),   //class BuildingBody is in body.dart
