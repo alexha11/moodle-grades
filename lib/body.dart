@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-buildingTableCell(
-    String text, double fontSize, FontWeight fontWeight, BuildContext context) {
+buildingTableCell(String text, double fontSize, FontWeight fontWeight, BuildContext context) {
   return TableCell(
     verticalAlignment: TableCellVerticalAlignment.middle,
     child: Padding(

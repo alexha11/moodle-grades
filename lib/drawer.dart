@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 
+String selectedItemId = 'Grades';
+
 buildingListTile(String text, IconData icon) {
-  return ListTile(
-    title: Row(
-      children: [
-        Icon(icon),
-        //Spacer(flex: 1),
-        const SizedBox(width: 10.0),
-        Flexible(
-          child: Text(
-            text,
-          ),
-        ),
-      ],
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: const BorderRadius.all(Radius.circular(40.0)),
+      color: selectedItemId == text ? const Color(0x34C4CAA9) : null,
     ),
-    onTap: () {},
+    child: ListTile(
+      title: Row(
+        children: [
+          Icon(icon),
+          //Spacer(flex: 1),
+          const SizedBox(width: 10.0),
+          Flexible(
+            child: Text(
+              text,
+            ),
+          ),
+        ],
+      ),
+      onTap: () {
+        selectedItemId = text;
+      },
+    ),
   );
 }
 
