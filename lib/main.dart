@@ -35,14 +35,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         centerTitle: true,
         actions: [
-          Image.asset('images/profile_image.png'),
+          Row(
+            children: [
+              const Text ('John Doe', style: TextStyle(color: Colors.black, fontSize: 14)),
+              const SizedBox(width: 8.0),
+              Builder(
+                builder: (BuildContext context) {
+                  return IconButton(
+                    icon: Image.asset('images/profile_image.png'),
+                    onPressed: () {
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
         ],
       ),
       drawer: Drawer(
-        
-        child: buildingDrawer(context),   //function buildingDrawer is in drawer.dart
+        child: buildingDrawer(context),
       ),
-      body: const BuildingBody(),   //class BuildingBody is in body.dart
+      body: const BuildingBody(),
     );
   }
 }
