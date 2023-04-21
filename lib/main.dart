@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '/drawer.dart';
 import '/body.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,10 +9,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Grade App',
+      title: 'Moodle Grades',
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.lightGreen,
+        scaffoldBackgroundColor: const Color(0xFFFFFEFC),
       ),
       home: const MyHomePage(title: 'Grades'),
     );
@@ -23,7 +25,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
- _MyHomePageState createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -31,20 +33,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFFCF9F1),
         title: Text(widget.title),
         centerTitle: true,
         actions: [
           Row(
             children: [
-              const Text ('John Doe', style: TextStyle(color: Colors.black, fontSize: 14)),
+              const Text('John Doe',
+                  style: TextStyle(color: Colors.black, fontSize: 14)),
               const SizedBox(width: 8.0),
               Builder(
                 builder: (BuildContext context) {
                   return IconButton(
                     icon: Image.asset('images/profile_image.png'),
-                    onPressed: () {
-                    },
+                    onPressed: () {},
                   );
                 },
               ),
