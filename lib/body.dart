@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-buildingTableCell(String text, double fontSize, FontWeight fontWeight, BuildContext context) {
+buildingTableCell(
+    String text, double fontSize, FontWeight fontWeight, BuildContext context) {
   return TableCell(
     verticalAlignment: TableCellVerticalAlignment.middle,
     child: Padding(
@@ -12,7 +13,9 @@ buildingTableCell(String text, double fontSize, FontWeight fontWeight, BuildCont
                 style: TextStyle(
                   fontSize: fontSize,
                   fontWeight: fontWeight,
-                  color: text == 'Missed' || text == 'Failed' || text == '0' ? Colors.red : Colors.black,
+                  color: text == 'Missed' || text == 'Failed' || text == '0'
+                      ? Colors.red
+                      : Colors.black,
                 ),
               ),
             )
@@ -481,7 +484,8 @@ buildingTableAllCourses(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('Foundations of Computer Science', 9, FontWeight.normal, context),
+            buildingTableCell('Foundations of Computer Science', 9,
+                FontWeight.normal, context),
             buildingTableCell('BM40A0202', 9, FontWeight.normal, context),
             buildingTableCell('', 9, FontWeight.normal, context),
             buildingTableCell('6 cr', 9, FontWeight.normal, context),
@@ -490,7 +494,8 @@ buildingTableAllCourses(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('User Interface and Usability', 9, FontWeight.normal, context),
+            buildingTableCell(
+                'User Interface and Usability', 9, FontWeight.normal, context),
             buildingTableCell('CT30A2803', 9, FontWeight.normal, context),
             buildingTableCell('', 9, FontWeight.normal, context),
             buildingTableCell('6 cr', 9, FontWeight.normal, context),
@@ -499,7 +504,8 @@ buildingTableAllCourses(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('Object-Oriented Programming', 9, FontWeight.normal, context),
+            buildingTableCell(
+                'Object-Oriented Programming', 9, FontWeight.normal, context),
             buildingTableCell('CT60A2411', 9, FontWeight.normal, context),
             buildingTableCell('4', 9, FontWeight.normal, context),
             buildingTableCell('4 cr', 9, FontWeight.normal, context),
@@ -508,7 +514,8 @@ buildingTableAllCourses(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('Principles of C Programming', 9, FontWeight.normal, context),
+            buildingTableCell(
+                'Principles of C Programming', 9, FontWeight.normal, context),
             buildingTableCell('CT60A2500', 9, FontWeight.normal, context),
             buildingTableCell('3', 9, FontWeight.normal, context),
             buildingTableCell('3 cr', 9, FontWeight.normal, context),
@@ -522,13 +529,13 @@ buildingTableAllCourses(BuildContext context) {
             buildingTableCell('CT60A5521', 9, FontWeight.normal, context),
             buildingTableCell('4', 9, FontWeight.normal, context),
             buildingTableCell('3 cr', 9, FontWeight.normal, context),
-            buildingTableCell(
-                '24.1.2023', 9, FontWeight.normal, context),
+            buildingTableCell('24.1.2023', 9, FontWeight.normal, context),
           ],
         ),
         TableRow(
           children: [
-            buildingTableCell('Discrete Models and Methods 2', 9, FontWeight.normal, context),
+            buildingTableCell(
+                'Discrete Models and Methods 2', 9, FontWeight.normal, context),
             buildingTableCell('CT60A9600', 9, FontWeight.normal, context),
             buildingTableCell('0', 9, FontWeight.normal, context),
             buildingTableCell('3 cr', 9, FontWeight.normal, context),
@@ -537,7 +544,11 @@ buildingTableAllCourses(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('Introduction to DD Studies in Software and Systems Engineering', 9, FontWeight.normal, context),
+            buildingTableCell(
+                'Introduction to DD Studies in Software and Systems Engineering',
+                9,
+                FontWeight.normal,
+                context),
             buildingTableCell('CT10A9900', 9, FontWeight.normal, context),
             buildingTableCell('Passed', 9, FontWeight.normal, context),
             buildingTableCell('1 cr', 9, FontWeight.normal, context),
@@ -546,7 +557,8 @@ buildingTableAllCourses(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('Maturity test in Bachelor\'s Degree', 9, FontWeight.normal, context),
+            buildingTableCell('Maturity test in Bachelor\'s Degree', 9,
+                FontWeight.normal, context),
             buildingTableCell('LUTKYPSAT', 9, FontWeight.normal, context),
             buildingTableCell('Failed', 9, FontWeight.normal, context),
             buildingTableCell('0 cr', 9, FontWeight.normal, context),
@@ -557,7 +569,6 @@ buildingTableAllCourses(BuildContext context) {
     ),
   );
 }
-
 
 class BuildingBody extends StatefulWidget {
   const BuildingBody({super.key});
@@ -643,56 +654,68 @@ class _BuildingBodyState extends State<BuildingBody> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(16.0),
+          margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                "Current Progress",
-                style: TextStyle(
-                  fontSize: 14,
-                  //fontWeight: FontWeight.bold,
-                ),
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Current Progess',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                  Text(
+                    '75% Grade 3     ',
+                    style: TextStyle(
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: 2),
-              LinearProgressIndicator(
-                value: 0.75,
+              const SizedBox(height: 8),
+              const LinearProgressIndicator(
+                value: 0.75, // set the value of the progress indicator
                 backgroundColor: Colors.grey,
                 valueColor: AlwaysStoppedAnimation<Color>(
                   Color.fromARGB(100, 83, 102, 0),
                 ),
                 minHeight: 7,
+                semanticsLabel: 'Linear progress indicator',
               ),
-              SizedBox(height: 8),
-              Padding(
-                padding:
-                    EdgeInsets.only(right: 16, left: 150, bottom: 1, top: 1),
-                child: Text(
-                  "1 |    2 |    3 |   4 |    5 |",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black,
+              const SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Text(
+                    'Grade 1 | Grade 2 | Grade 3 | Grade 4 | Grade 5 |        ',
+                    style: TextStyle(
+                      fontSize: 8,
+                    ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
         ),
         Container(
-          child: selectCourse != 'All Courses' ? Column(
-            children: [
-              buildingTableAssignments(context),
-              buildingTableQuizes(context),
-              buildingTableProjects(context),
-              buildingTableExams(context),
-              buildingTableTotalGrade(context),
-            ],
-          )
-          : Column(
-            children: [
-              buildingTableAllCourses(context),
-            ],
-          ),
+          child: selectCourse != 'All Courses'
+              ? Column(
+                  children: [
+                    buildingTableAssignments(context),
+                    buildingTableQuizes(context),
+                    buildingTableProjects(context),
+                    buildingTableExams(context),
+                    buildingTableTotalGrade(context),
+                  ],
+                )
+              : Column(
+                  children: [
+                    buildingTableAllCourses(context),
+                  ],
+                ),
         )
       ],
     );
