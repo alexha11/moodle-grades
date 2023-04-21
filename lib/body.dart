@@ -61,6 +61,7 @@ buildingTableAssignments(BuildContext context) {
       border: TableBorder.all(
         width: 1,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: const Color(0xFFC4CAA9),
       ),
       columnWidths: const {
         0: FlexColumnWidth(1.3),
@@ -75,7 +76,7 @@ buildingTableAssignments(BuildContext context) {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFE0E6C3),
           ),
           children: [
             buildingTableCell('Assignments', 14, FontWeight.bold, context),
@@ -137,7 +138,7 @@ buildingTableAssignments(BuildContext context) {
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFF6F4EB),
           ),
           children: [
             buildingTableCell('Total', 13, FontWeight.normal, context),
@@ -159,6 +160,7 @@ buildingTableQuizes(BuildContext context) {
       border: TableBorder.all(
         width: 1,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: const Color(0xFFC4CAA9),
       ),
       columnWidths: const {
         0: FlexColumnWidth(1.3),
@@ -172,7 +174,7 @@ buildingTableQuizes(BuildContext context) {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFE0E6C3),
           ),
           children: [
             buildingTableCell('Quizes', 14, FontWeight.bold, context),
@@ -207,7 +209,27 @@ buildingTableQuizes(BuildContext context) {
         ),
         TableRow(
           children: [
-            buildingTableCell('Quiz 4', 13, FontWeight.normal, context),
+            TableCell(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Chip(
+                    shape: StadiumBorder(),
+                    clipBehavior: Clip.antiAlias,
+                    backgroundColor: Color(0xFFE0E6C3),
+                    avatar: Icon(Icons.new_releases,
+                        color: Color(0xFF536600), size: 16),
+                    label: Text('NEW',
+                        style: TextStyle(
+                            fontSize: 11, fontWeight: FontWeight.bold)),
+                  ),
+                  SizedBox(width: 8),
+                  Text('Quiz 4',
+                      style: TextStyle(
+                          fontSize: 13, fontWeight: FontWeight.normal)),
+                ],
+              ),
+            ),
             buildingTableCell('4.25', 13, FontWeight.normal, context),
             buildingTableCell('0 - 5', 13, FontWeight.normal, context),
             buildingTableCell('Submitted', 13, FontWeight.normal, context),
@@ -227,7 +249,7 @@ buildingTableQuizes(BuildContext context) {
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
-            color: Color(0x34C4CAA9),
+            color: Color(0xFFF6F4EB),
           ),
           children: [
             buildingTableCell('Total', 13, FontWeight.normal, context),
@@ -248,6 +270,7 @@ buildingTableProjects(BuildContext context) {
       border: TableBorder.all(
         width: 1,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: const Color(0xFFC4CAA9),
       ),
       columnWidths: const {
         0: FlexColumnWidth(1.3),
@@ -261,7 +284,7 @@ buildingTableProjects(BuildContext context) {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFE0E6C3),
           ),
           children: [
             buildingTableCell('Projects', 14, FontWeight.bold, context),
@@ -293,7 +316,7 @@ buildingTableProjects(BuildContext context) {
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
-            color: Color(0x34C4CAA9),
+            color: Color(0xFFF6F4EB),
           ),
           children: [
             buildingTableCell('Total', 13, FontWeight.normal, context),
@@ -314,6 +337,7 @@ buildingTableExams(BuildContext context) {
       border: TableBorder.all(
         width: 1,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: const Color(0xFFC4CAA9),
       ),
       columnWidths: const {
         0: FlexColumnWidth(1.3),
@@ -327,7 +351,7 @@ buildingTableExams(BuildContext context) {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFE0E6C3),
           ),
           children: [
             buildingTableCell('Exams', 14, FontWeight.bold, context),
@@ -357,7 +381,7 @@ buildingTableExams(BuildContext context) {
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
-            color: Color(0x34C4CAA9),
+            color: Color(0xFFF6F4EB),
           ),
           children: [
             buildingTableCell('Total', 13, FontWeight.normal, context),
@@ -378,6 +402,7 @@ buildingTableTotalGrade(BuildContext context) {
       border: TableBorder.all(
         width: 1,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: const Color(0xFFC4CAA9),
       ),
       columnWidths: const {
         0: FlexColumnWidth(1.3),
@@ -391,7 +416,7 @@ buildingTableTotalGrade(BuildContext context) {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFE0E6C3),
           ),
           children: [
             buildingTableCell('Total Grade', 14, FontWeight.bold, context),
@@ -437,7 +462,7 @@ buildingTableTotalGrade(BuildContext context) {
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10)),
-            color: Color(0x34C4CAA9),
+            color: Color(0xFFF6F4EB),
           ),
           children: [
             buildingTableCell('Total', 13, FontWeight.normal, context),
@@ -458,6 +483,7 @@ buildingTableAllCourses(BuildContext context) {
       border: TableBorder.all(
         width: 1,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
+        color: const Color(0xFFC4CAA9),
       ),
       columnWidths: const {
         0: FlexColumnWidth(2),
@@ -472,7 +498,7 @@ buildingTableAllCourses(BuildContext context) {
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-            color: Color(0x63C4CAA9),
+            color: Color(0xFFE0E6C3),
           ),
           children: [
             buildingTableCell('Name', 14, FontWeight.bold, context),
@@ -589,7 +615,7 @@ buildingLinearProgressIndicator() {
               value: 0.75, // set the value of the progress indicator
               backgroundColor: Colors.grey[200],
               valueColor: const AlwaysStoppedAnimation<Color>(
-                Color.fromARGB(100, 83, 102, 0),
+                Color(0xFF536600),
               ),
               minHeight: 10,
               semanticsLabel: 'Linear progress indicator',
@@ -671,7 +697,7 @@ buildingLinearProgressIndicatorAllCourse() {
               value: 0.5, // set the value of the progress indicator
               backgroundColor: Colors.grey[200],
               valueColor: const AlwaysStoppedAnimation<Color>(
-                Color.fromARGB(100, 83, 102, 0),
+                Color(0xFF536600),
               ),
               minHeight: 10,
               semanticsLabel: 'Linear progress indicator',
@@ -681,7 +707,7 @@ buildingLinearProgressIndicatorAllCourse() {
         const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [    
+          children: const [
             Expanded(
               child: Text(
                 '',
