@@ -21,6 +21,21 @@ buildingListTile(String text, IconData icon) {
           ),
         ],
       ),
+      trailing: text == 'Calendar'
+          ?  Container(
+              height: 19,
+              width: 21,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0x63536600),
+              ),
+              alignment: Alignment.topCenter,
+              child: const Text(
+                '3',
+                style: TextStyle(color: Colors.white, fontSize: 13),
+              ),
+            )
+          : null,
       onTap: () {
         selectedItemId = text;
       },
@@ -42,12 +57,21 @@ buildingDrawer(BuildContext context) {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                IconButton(
-                  icon: const Icon(Icons.menu),
-                  tooltip: 'Close view',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        icon: const Icon(Icons.menu),
+                        tooltip: 'Close view',
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                      Image.asset('images/logo_lut.png'),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 10.0),
                 const Text(
@@ -79,12 +103,18 @@ buildingDrawer(BuildContext context) {
                 ),
               ),
             ),
-            buildingListTile('BM40A0202 Foundations of Computer Science', Icons.school),
-            buildingListTile('CT30A2803 User Interface and Usability', Icons.school),
-            buildingListTile('CT60A2411 Object-Oriented Programming', Icons.school),
-            buildingListTile('CT60A2500 Principles of C Programming', Icons.school),
-            buildingListTile('CT60A5521 Database Systems Management', Icons.school),
-            buildingListTile('CT60A9600 Discrete Models and Methods 2', Icons.school),
+            buildingListTile(
+                'BM40A0202 Foundations of Computer Science', Icons.school),
+            buildingListTile(
+                'CT30A2803 User Interface and Usability', Icons.school),
+            buildingListTile(
+                'CT60A2411 Object-Oriented Programming', Icons.school),
+            buildingListTile(
+                'CT60A2500 Principles of C Programming', Icons.school),
+            buildingListTile(
+                'CT60A5521 Database Systems Management', Icons.school),
+            buildingListTile(
+                'CT60A9600 Discrete Models and Methods 2', Icons.school),
           ],
         ),
       ],
