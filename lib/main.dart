@@ -39,13 +39,23 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           Row(
             children: [
-              const Text('John Doe',
+              const Text('Duong Ha',
                   style: TextStyle(color: Colors.black, fontSize: 14)),
               const SizedBox(width: 8.0),
               Builder(
                 builder: (BuildContext context) {
                   return IconButton(
-                    icon: Image.asset('images/profile_image.png'),
+                    iconSize: 40.0, // Adjust the size of the IconButton
+                    icon: ClipOval(
+                      child: Image.network(
+                        'https://res.cloudinary.com/ddfq0pl1q/image/upload/v1723157298/focus-photo_pdwkkh.jpg',
+                        width:
+                            40.0, // Make the width and height equal to iconSize
+                        height: 40.0,
+                        fit: BoxFit
+                            .cover, // Ensures the image fills the ClipOval properly
+                      ),
+                    ),
                     onPressed: () {},
                   );
                 },
